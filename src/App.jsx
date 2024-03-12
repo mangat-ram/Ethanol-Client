@@ -1,11 +1,11 @@
-import { InputBox } from './components/Input';
+import { RegisterForm } from './components/RegisterForm.jsx';
 import './App.css'
 
 function App() {
 
   return (
     <>
-      <InputBox />
+      <RegisterForm />
     </>
   )
 }
