@@ -1,4 +1,4 @@
-import { RegisterForm } from './components/RegisterForm.jsx';
+import { RegisterForm } from './components/RegisterForm';
 import './App.css'
 
 function App() {

@@ -1,50 +1,101 @@
-import React from "react";
-import { Input } from "@nextui-org/react";
-import {Card, CardHeader, CardBody, CardFooter, Divider, Link, Image} from "@nextui-org/react";
-
-// export const RegisterForm = () => {
-//   return (
-//     <div className="flex w-full flex-wrap md:flex-nowrap gap-4">
-//         <Input size="md" type="text" label="Username" />
-//         <Input size="md" type="text" label="Name" />
-//         <Input size="md" type="email" label="Email" />
-//         <Input size="md" type="password" label="Password" />
-//     </div>
-//   );
-// }
-
+import { useState } from 'react';
 
 export const RegisterForm = () => {
+  const [formData, setFormData] = useState({
+    username: '',
+    name: '',
+    email: '',
+    password: ''
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Add your form submission logic here
+    console.log(formData);
+  };
+
   return (
-    <Card className="max-w-[400px]">
-      <CardHeader className="flex gap-3">
-        <Image
-          alt="nextui logo"
-          height={40}
-          radius="sm"
-          src="https://avatars.githubusercontent.com/u/86160567?s=200&v=4"
-          width={40}
-        />
-        <div className="flex flex-col">
-          <p className="text-md">Register Yourself</p>
-          <p className="text-small text-default-500">ethanol.org</p>
+    <>
+      <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
+        <div className="sm:mx-auto sm:w-full sm:max-w-sm">
+          <img
+            className="mx-auto h-10 w-auto"
+            src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+            alt="Your Company"
+          />
+          <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
+            Sign in to your account
+          </h2>
         </div>
-      </CardHeader>
-      <Divider/>
-      <CardBody>
-        <Input size="md" type="text" label="Username" />
-        <Input size="md" type="text" label="Name" />
-        <Input size="md" type="email" label="Email" />
-        <Input size="md" type="password" label="Password" />
-      </CardBody>
-      <Divider/>
-      <CardFooter>
-        
-      </CardFooter>
-    </Card>
+
+        <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+          <form className="space-y-6" action="#" method="POST">
+            <div>
+              <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
+                Email address
+              </label>
+              <div className="mt-2">
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  autoComplete="email"
+                  required
+                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                />
+              </div>
+            </div>
+
+            <div>
+              <div className="flex items-center justify-between">
+                <label htmlFor="password" className="block text-sm font-medium leading-6 text-gray-900">
+                  Password
+                </label>
+                <div className="text-sm">
+                  <a href="#" className="font-semibold text-indigo-600 hover:text-indigo-500">
+                    Forgot password?
+                  </a>
+                </div>
+              </div>
+              <div className="mt-2">
+                <input
+                  id="password"
+                  name="password"
+                  type="password"
+                  autoComplete="current-password"
+                  required
+                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                />
+              </div>
+            </div>
+
+            <div>
+              <button
+                type="submit"
+                className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+              >
+                Sign in
+              </button>
+            </div>
+          </form>
+
+          <p className="mt-10 text-center text-sm text-gray-500">
+            Not a member?{' '}
+            <a href="#" className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">
+              Start a 14 day free trial
+            </a>
+          </p>
+        </div>
+      </div>
+    </>
   );
-}
-
-
-
+};
 
