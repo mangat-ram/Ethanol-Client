@@ -2,7 +2,9 @@ import React from 'react'
 
 const LandingHeader = () => {
   return (
-    <div>LandingHeader</div>
+    <div 
+      className="text-4xl"
+    >LandingHeader</div>
   )
 }
 

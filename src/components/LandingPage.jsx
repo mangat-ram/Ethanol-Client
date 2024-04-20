@@ -1,8 +1,11 @@
 import React from 'react'
+import LandingHeader from '../subComponents/LandingPage/LandingHeader'
 
 const LandingPage = () => {
   return (
-    <h1 className="text-4xl">LandingPage</h1>
+    <>
+      <LandingHeader />
+    </>
   )
 }
 
