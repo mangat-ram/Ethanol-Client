@@ -3,9 +3,9 @@ import MaxWidthWrapper from "./MaxWidthWrapper";
 import Link from "next/link";
 import Image from "next/image";
 import { Button, buttonVariants } from "./ui/button";
-import CustomTabs from "./CustomTabs";
 
 const HeroSection = () => {
+
   return (
     <>
       <MaxWidthWrapper
@@ -26,10 +26,10 @@ const HeroSection = () => {
           <p>Projects: Introducing <span className="text-blue-600">Ethanol</span></p>
         </h1>
         <div className="flex justify-center items-center gap-8 mt-10 font-cabinet">
-          <Button name="Dashboard" className="bg-[#bde0fe] hover:bg-[#bde0fe]/50"></Button>
-          <CustomTabs name="Tasks" className="bg-[#ffc8dd] hover:bg-[#ffc8dd]/50"></CustomTabs>
-          <CustomTabs name="Projects" className="bg-[#FFB381] hover:bg-[#FFB381]/50"></CustomTabs>
-          <CustomTabs name="Molecules" className="bg-[#92CEAC] hover:bg-[#92CEAC]/50"></CustomTabs>
+          <Button className="bg-[#bde0fe] hover:bg-[#bde0fe]/50 text-2xl rounded-full p-6 w-40 text-[#003049] text-center font-bold">Dashboard</Button>
+          <Button className="bg-[#ffc8dd] hover:bg-[#ffc8dd]/50 text-2xl rounded-full p-6 w-40 text-[#003049] text-center font-bold">Projects</Button>
+          <Button className="bg-[#FFB381] hover:bg-[#FFB381]/50 text-2xl rounded-full p-6 w-40 text-[#003049] text-center font-bold">Tasks</Button>
+          <Button className="bg-[#92CEAC] hover:bg-[#92CEAC]/50 text-2xl rounded-full p-6 w-40 text-[#003049] text-center font-bold">Molecules</Button>
         </div>
         <div>
             <div>

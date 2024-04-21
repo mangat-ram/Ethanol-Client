@@ -8,7 +8,7 @@ interface CustomTabsProps{
 }
 
 const CustomTabs = ({name,className}:CustomTabsProps) => {
-  const combinedClasses = twMerge("text-2xl rounded-full p-6 w-40 text-[#003049] text-center font-bold",className)
+  const combinedClasses = 
   return (
     <Button
       className={combinedClasses}
