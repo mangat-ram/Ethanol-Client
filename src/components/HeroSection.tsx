@@ -31,6 +31,22 @@ const HeroSection = () => {
           <CustomTabs name="Projects" className="bg-[#FFB381] hover:bg-[#FFB381]/50"></CustomTabs>
           <CustomTabs name="Molecules" className="bg-[#92CEAC] hover:bg-[#92CEAC]/50"></CustomTabs>
         </div>
+        <div>
+            <div className="mx-auto max-w-6xl px-6 lg:px-8">
+              <div className="mt-16 flow-root sm:mt-24">
+                <div className="-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4">
+                  <Image
+                    src="/dashboard-preview.jpg"
+                    alt="product-preview"
+                    width={1364}
+                    height={866}
+                    quality={100}
+                    className="rounded bg-white p-2 sm:p-8 md:p-20 shadow-xl ring-1 ring-gray-900/10"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
       </MaxWidthWrapper>
     </>
   )
