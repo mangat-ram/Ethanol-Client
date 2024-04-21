@@ -26,7 +26,7 @@ const HeroSection = () => {
           <p>Projects: Introducing <span className="text-blue-600">Ethanol</span></p>
         </h1>
         <div className="flex justify-center items-center gap-8 mt-10 font-cabinet">
-          <CustomTabs name="Dashboard" className="bg-[#bde0fe] hover:bg-[#bde0fe]/50"></CustomTabs>
+          <Button name="Dashboard" className="bg-[#bde0fe] hover:bg-[#bde0fe]/50"></Button>
           <CustomTabs name="Tasks" className="bg-[#ffc8dd] hover:bg-[#ffc8dd]/50"></CustomTabs>
           <CustomTabs name="Projects" className="bg-[#FFB381] hover:bg-[#FFB381]/50"></CustomTabs>
           <CustomTabs name="Molecules" className="bg-[#92CEAC] hover:bg-[#92CEAC]/50"></CustomTabs>
@@ -34,8 +34,8 @@ const HeroSection = () => {
         <div>
             <div>
                   <Image
-                    src="/sample1.jpg"
-                    alt="product-preview"
+                    src="/illus/illus2.png"
+                    alt="woman_seeing_board"
                     width={6000}
                     height={4000}
                     quality={100}
