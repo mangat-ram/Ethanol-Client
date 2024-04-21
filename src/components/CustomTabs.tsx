@@ -15,7 +15,6 @@ const CustomTabs = ({name,className}:CustomTabsProps) => {
     >
       {name}
     </Button>
-    
   )
 }
 

@@ -17,7 +17,7 @@ const HeroSection = () => {
               className:"-mt-10 mb-4 text-xl rounded-full"
             })}
           >
-              Ethanol is Free
+              Get Started
           </Button>
           <h1
           className="max-w-4xl text-5xl font-bold md:text-6xl lg:text-7xl font-featureDeck"
