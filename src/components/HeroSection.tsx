@@ -5,6 +5,7 @@ import MaxWidthWrapper from "./MaxWidthWrapper";
 import Link from "next/link";
 import Image from "next/image";
 import { Button, buttonVariants } from "./ui/button";
+import { ArrowRight } from "lucide-react";
 
 const HeroSection = () => {
 
@@ -15,7 +16,7 @@ const HeroSection = () => {
       <MaxWidthWrapper
         className="mb-12 mt-28 sm:mt-40 flex flex-col items-center justify-center text-center"
       >
-          <Button className="bg-[#001d3d] hover:bg-[#001d3d]/70 text-2xl rounded-full p-6 w-40 text-[#ffe5d9] text-center font-bold font-cabinet -mt-10 mb-4">Get Started</Button>
+          <Button className="bg-[#001d3d] hover:bg-[#001d3d]/70 text-2xl rounded-lg p-6 w-40 text-[#ffe5d9] text-center font-cabinet -mt-20 mb-4">Get Started<ArrowRight className='ml-1.5 h-5 w-5' /></Button>
           <h1
           className="max-w-4xl text-5xl font-bold md:text-6xl lg:text-7xl font-featureDeck"
         >

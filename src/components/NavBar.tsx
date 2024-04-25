@@ -7,14 +7,14 @@ import { ArrowRight } from 'lucide-react'
 const NavBar = () => {
   return (
     <nav
-      className="sticky h-14 inset-x-0 top-0 z-30 w-full border-b border-gray-200 bg-white/75 backdrop-blur-lg transition-all"
+      className="sticky h-20 inset-x-0 top-0 z-30 w-full border-b border-gray-200 bg-white/30 backdrop-blur-md transition-all font-cabinet font-extrabold"
     >
       <MaxWidthWrapper>
         <div
-          className="flex h-14 items-center justify-between border-b border-zinc-200"
+          className="flex h-20 items-center justify-between border-b border-zinc-200"
         >
           <Link href="/" className="flex text-3xl z-40 font-semibold">
-            <span>Ethanol</span>
+            <span className="font-featureDeck font-bold">Ethanol</span>
           </Link>
 
           {/*Todo Add Mobile navbar*/}
@@ -23,23 +23,30 @@ const NavBar = () => {
               <Link href="/pricing" 
               className={buttonVariants({
                 variant:"ghost",
-                size:"sm"
+                size:"xl"
+              })}>
+                Testimonials
+              </Link>
+              <Link href="/pricing" 
+              className={buttonVariants({
+                variant:"ghost",
+                size:"xl"
               })}>
                 Pricing
               </Link>
               <Link
-                href="#"
+                href="/signIn"
                 className={buttonVariants({
                 variant:"ghost",
-                size:"sm"
+                size:"xl"
               })}
               >
                 Sign In
               </Link>
               <Link
-                href="#"
+                href="/signUp"
                 className={buttonVariants({
-                size:"sm"
+                size:"xl"
               })}
               >
                 Get Started<ArrowRight className='ml-1.5 h-5 w-5' />
