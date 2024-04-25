@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import {
   Form,
   FormControl,
@@ -10,12 +12,26 @@ import {
 import { Input } from "@/components/ui/input"
 import { Loader2 } from 'lucide-react';
 import { signUpSchema } from "@/schemas/signUpSchema";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { Button } from "@/components/ui/button";
+import * as z from "zod"
 
 const SignUp = () => {
 
+  const [isSubmitting,setIsSubmitting] = useState(false)
+  const form = useForm<z.infer<typeof signUpSchema>>({
+    resolver: zodResolver(signUpSchema),
+    defaultValues:{
+      username: "",
+      name: "",
+      email: "",
+      password:""
+    }
+  })
+
   const submitRegister = () => {
-    console.log("");
-    
+    console.log("Register");
   }
 
   return (
@@ -30,7 +46,7 @@ const SignUp = () => {
             </p>
           </div>
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(submitLogin)} className="space-y-6">
+            <form onSubmit={form.handleSubmit(submitRegister)} className="space-y-6">
               <FormField
                 control={form.control}
                 name="username"
@@ -40,6 +56,39 @@ const SignUp = () => {
                     <FormControl>
                       <Input 
                         placeholder="your username here" 
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="name"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Name</FormLabel>
+                    <FormControl>
+                      <Input 
+                        placeholder="your fullname here" 
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="email"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Email</FormLabel>
+                    <FormControl>
+                      <Input 
+                        type="email"
+                        placeholder="your email here" 
                         {...field}
                       />
                     </FormControl>
