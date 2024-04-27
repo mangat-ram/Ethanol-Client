@@ -42,3 +42,49 @@ export const FeatureArr:Array<FeatureArrType> = [
     class:"bg-[#cfe57d] bg-opacity-30"
   }
 ]
+
+type TestimonialsArrType = {
+  avatar: string;
+  name: string;
+  role: string;
+  companyName: string;
+}
+
+export const TestimonialsArr:Array<TestimonialsArrType> = [
+  {
+    avatar:"image1",
+    name:"Fraser McGurk",
+    role:"CEO",
+    companyName:"ZooPe Inc."
+  },
+  {
+    avatar:"image2",
+    name:"David Lynch",
+    role:"Engineering Manager",
+    companyName:"Watters LLC."
+  },
+  {
+    avatar:"image3",
+    name:"Timothy Chalamet",
+    role:"CTO",
+    companyName:"Pfayzer Group."
+  },
+  {
+    avatar:"image4",
+    name:"Mangat Leelaram",
+    role:"Founder and CXO",
+    companyName:"BenzeneLabs & Co."
+  },
+  {
+    avatar:"image5",
+    name:"Ashton Smurf",
+    role:"Founder",
+    companyName:"PayRent.com"
+  },
+  {
+    avatar:"image1",
+    name:"Geoff Siefert",
+    role:"Tech Lead",
+    companyName:"Croff Solutions"
+  }
+]

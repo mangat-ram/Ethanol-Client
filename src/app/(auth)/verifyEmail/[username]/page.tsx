@@ -1,3 +1,5 @@
+"use client"
+
 import React from "react"
 import * as z from "zod"
 import { useParams, useRouter } from "next/navigation"
