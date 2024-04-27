@@ -48,6 +48,7 @@ type TestimonialsArrType = {
   name: string;
   role: string;
   companyName: string;
+  review:string;
 }
 
 export const TestimonialsArr:Array<TestimonialsArrType> = [
@@ -55,36 +56,42 @@ export const TestimonialsArr:Array<TestimonialsArrType> = [
     avatar:"image1",
     name:"Fraser McGurk",
     role:"CEO",
-    companyName:"ZooPe Inc."
+    companyName:"ZooPe Inc.",
+    review:"Ethanol is very helpful tool for our team it has given us more clarity about how we will start our project how to proceed and how everyone is going to do their part and track progress of every department and tasks assigned to each person."
   },
   {
     avatar:"image2",
     name:"David Lynch",
     role:"Engineering Manager",
-    companyName:"Watters LLC."
+    companyName:"Watters LLC.",
+    review:"Ethanol has truly revolutionized our project management approach. It's provided us with a clear roadmap, ensuring everyone understands their roles and responsibilities. Tracking progress has never been easier, thanks to its intuitive features."
   },
   {
     avatar:"image3",
     name:"Timothy Chalamet",
     role:"CTO",
-    companyName:"Pfayzer Group."
+    companyName:"Pfayzer Group.",
+    review:"Using Ethanol has been a game-changer for our team. It's streamlined our project planning process, allowing us to allocate tasks efficiently and monitor their progress seamlessly. It's become an indispensable tool in our toolkit."
   },
   {
     avatar:"image4",
     name:"Mangat Leelaram",
     role:"Founder and CXO",
-    companyName:"BenzeneLabs & Co."
+    companyName:"BenzeneLabs & Co.",
+    review:"Ethanol has exceeded our expectations in project management. It's empowered our team to collaborate effectively, clarifying roles and responsibilities from the get-go. With its robust tracking capabilities, we're able to stay on top of tasks and milestones effortlessly."
   },
   {
     avatar:"image5",
     name:"Ashton Smurf",
     role:"Founder",
-    companyName:"PayRent.com"
+    companyName:"PayRent.com",
+    review:"We can't imagine managing our project without Ethanol now. It's been instrumental in providing us with a structured approach, ensuring everyone is aligned with the project objectives. The ability to track progress in real-time has significantly boosted our productivity."
   },
   {
     avatar:"image1",
     name:"Geoff Siefert",
     role:"Tech Lead",
-    companyName:"Croff Solutions"
+    companyName:"Croff Solutions",
+    review:"Ethanol has simplified our project coordination immensely. With its user-friendly interface and comprehensive features, we've gained a newfound level of clarity in our workflows. It's become an essential companion for keeping our team organized and on track."
   }
 ]
