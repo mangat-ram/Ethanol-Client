@@ -44,7 +44,7 @@ export const FeatureArr:Array<FeatureArrType> = [
 ]
 
 type TestimonialsArrType = {
-  avatar: string;
+  avatar: any;
   name: string;
   role: string;
   companyName: string;
