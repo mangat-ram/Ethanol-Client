@@ -56,7 +56,7 @@ const SignUp = () => {
           console.log("Error in catch Part useEffect:", error);
           toast({
             title:"Sign Up Failed",
-            description:"Error in catch Part useEffect",
+            description:"Error in catch Part useEffect checking unique user.",
             variant:"destructive"
           })
         } finally {
@@ -77,15 +77,19 @@ const SignUp = () => {
         title:"Success",
         description:res.data.message
       })
+      router.replace(`/verifyEmail/${username}`)
     } catch (error) {
-      console.log("error in catch of register",error);
-      
+      toast({
+          title:"Sign Up Failed",
+          description:"Error in Registering User!",
+          variant:"destructive"
+      })
     }
   }
 
   return (
 
-          <div className="font-cabinet flex justify-center items-center min-h-screen bg-gray-100">
+      <div className="font-cabinet flex justify-center items-center min-h-screen bg-gray-100">
         <div className="w-full max-w-md p-8 space-y-8 bg-white rounded-lg shadow-md">
           <div className="text-center">
             <h1 className="text-4xl font-bold tracking-tight lg:text-5xl mb-6 font-featureDeck">
@@ -185,4 +189,4 @@ const SignUp = () => {
   )
 }
 
-export default SignUp
+export default SignUp;
