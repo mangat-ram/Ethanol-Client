@@ -19,6 +19,7 @@ import * as z from "zod"
 import { useDebounceCallback } from "usehooks-ts";
 import { useToast } from "@/components/ui/use-toast";
 import { useRouter } from "next/navigation";
+import axios from "axios";
 
 const SignUp = () => {
 
@@ -34,10 +35,10 @@ const SignUp = () => {
   const form = useForm<z.infer<typeof signUpSchema>>({
     resolver: zodResolver(signUpSchema),
     defaultValues:{
-      username: "",
+      userName: "",
       name: "",
       email: "",
-      password:""
+      passWord:""
     }
   })
 
@@ -47,17 +48,36 @@ const SignUp = () => {
         setIsCheckingUser(true)
         setUsernameMessage("")
         try {
-          const res = await
+          const res = await axios.get(`http://localhost:8000/api/v1/users/checkUniqueUser/${username}`)
+          setUsernameMessage(res.data.message);
+          // console.log("Response",usernameMessage)
         } catch (error) {
-          
+          console.log("Error in catch Part useEffect:", error);
+          toast({
+            title:"Sign Up Failed",
+            description:"Error in catch Part useEffect",
+            variant:"destructive"
+          })
+        } finally {
+          setIsCheckingUser(false);
         }
       }
-    } 
-  },[debouncedUsername])
+    }
+    checkUsernameUni(); 
+  },[username])
 
-  const submitRegister = () => {
-
-    console.log("Register");
+  const submitRegister = async (data: z.infer<typeof signUpSchema>) => {
+    setIsSubmitting(true)
+    try {
+      const res = await axios.post('http://localhost:8000/api/v1/users/register',data);
+      toast({
+        title:"Success",
+        description:res.data.message
+      })
+    } catch (error) {
+      console.log("error in catch of register",error);
+      
+    }
   }
 
   return (
@@ -75,7 +95,7 @@ const SignUp = () => {
             <form onSubmit={form.handleSubmit(submitRegister)} className="space-y-6">
               <FormField
                 control={form.control}
-                name="username"
+                name="userName"
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>Username</FormLabel>
@@ -83,8 +103,14 @@ const SignUp = () => {
                       <Input 
                         placeholder="your username here" 
                         {...field}
+                        onChange={(e) => {
+                          field.onChange(e)
+                          debouncedUsername(e.target.value)
+                        }}
                       />
                     </FormControl>
+                    {isCheckingUser && <Loader2 className="animate-spin" />}
+                    <p className={`text-sm font-bold ${usernameMessage === "Username is available." ? 'text-green-500' : 'text-red-600'}`}>{usernameMessage}</p>
                     <FormMessage />
                   </FormItem>
                 )}
@@ -124,7 +150,7 @@ const SignUp = () => {
               />
               <FormField
                 control={form.control}
-                name="password"
+                name="passWord"
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>Password</FormLabel>
@@ -145,7 +171,7 @@ const SignUp = () => {
                       <Loader2 
                         className="mr-2 h-4 w-4 animate-spin" 
                       /> Please wait
-                    </>) : ("SignIn")
+                    </>) : ("SignUp")
                 }
               </Button>
             </form>
