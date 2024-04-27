@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Form,
   FormControl,
@@ -16,6 +16,9 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "@/components/ui/button";
 import * as z from "zod"
+import { useDebounceCallback } from "usehooks-ts";
+import { useToast } from "@/components/ui/use-toast";
+import { useRouter } from "next/navigation";
 
 const SignUp = () => {
 
@@ -24,7 +27,10 @@ const SignUp = () => {
   const [isCheckingUser,setIsCheckingUser] = useState(false)
   const [isSubmitting,setIsSubmitting] = useState(false)
 
-  const debouncedUsername = use
+  const debouncedUsername = useDebounceCallback(setUsername,500);
+  const {toast} = useToast();
+  const router = useRouter();
+
   const form = useForm<z.infer<typeof signUpSchema>>({
     resolver: zodResolver(signUpSchema),
     defaultValues:{
@@ -34,6 +40,20 @@ const SignUp = () => {
       password:""
     }
   })
+
+  useEffect(() => {
+    const checkUsernameUni = async () => {
+      if(username){
+        setIsCheckingUser(true)
+        setUsernameMessage("")
+        try {
+          const res = await
+        } catch (error) {
+          
+        }
+      }
+    } 
+  },[debouncedUsername])
 
   const submitRegister = () => {
 
