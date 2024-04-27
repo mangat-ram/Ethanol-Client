@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 
 import React, { useEffect, useState } from "react";
@@ -83,7 +84,7 @@ const SignUp = () => {
   }
 
   return (
-    
+
           <div className="font-cabinet flex justify-center items-center min-h-screen bg-gray-100">
         <div className="w-full max-w-md p-8 space-y-8 bg-white rounded-lg shadow-md">
           <div className="text-center">
