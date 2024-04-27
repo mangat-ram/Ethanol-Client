@@ -19,7 +19,12 @@ import * as z from "zod"
 
 const SignUp = () => {
 
+  const [username,setUsername] = useState("");
+  const [usernameMessage, setUsernameMessage] = useState("");
+  const [isCheckingUser,setIsCheckingUser] = useState(false)
   const [isSubmitting,setIsSubmitting] = useState(false)
+
+  const debouncedUsername = use
   const form = useForm<z.infer<typeof signUpSchema>>({
     resolver: zodResolver(signUpSchema),
     defaultValues:{
@@ -31,6 +36,7 @@ const SignUp = () => {
   })
 
   const submitRegister = () => {
+
     console.log("Register");
   }
 
