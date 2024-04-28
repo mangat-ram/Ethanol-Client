@@ -19,6 +19,7 @@ import {
 import { Input } from "@/components/ui/input"
 import { Loader2 } from 'lucide-react';
 import { signInSchema } from "@/schemas/signInSchema"
+import Link from "next/link";
 
 const SignIn = () => {
 
@@ -41,8 +42,8 @@ const SignIn = () => {
   }
 
   return (
-      <div className="grainy font-cabinet flex justify-center items-center min-h-screen bg-gray-100">
-        <div className="w-full max-w-md p-8 space-y-8 bg-white rounded-lg shadow-md">
+      <div className="grainy font-cabinet flex justify-center items-center min-h-screen">
+        <div className="w-full max-w-md p-8 space-y-8 bg-white/30 rounded-lg shadow-md">
           <div className="text-center">
             <h1 className="text-4xl font-bold tracking-tight lg:text-5xl mb-6 font-featureDeck">
               Join Ethanol Now
@@ -97,6 +98,7 @@ const SignIn = () => {
               </Button>
             </form>
           </Form>
+          <span className="flex items-center justify-center"><p>New to Ethanol ?  <Link href="/signUp" className="text-blue-600 hover:text-blue-800">Sign Up</Link></p></span>
         </div>
       </div>
   )

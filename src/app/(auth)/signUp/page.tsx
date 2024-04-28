@@ -21,6 +21,7 @@ import { useDebounceCallback } from "usehooks-ts";
 import { useToast } from "@/components/ui/use-toast";
 import { useRouter } from "next/navigation";
 import axios from "axios";
+import Link from "next/link";
 
 const SignUp = () => {
 
@@ -90,7 +91,7 @@ const SignUp = () => {
   return (
 
       <div className="grainy font-cabinet flex justify-center items-center min-h-screen bg-gray-100">
-        <div className="w-full max-w-md p-8 space-y-8 bg-white rounded-lg shadow-md">
+        <div className="w-full max-w-md p-8 space-y-8 bg-white/50 rounded-lg shadow-md">
           <div className="text-center">
             <h1 className="text-4xl font-bold tracking-tight lg:text-5xl mb-6 font-featureDeck">
               Join Ethanol Now
@@ -184,6 +185,7 @@ const SignUp = () => {
               </Button>
             </form>
           </Form>
+        <span className="flex items-center justify-center"><p>Already a User ? <Link href="/signIn" className="text-blue-600 hover:text-blue-800">Sign In</Link></p></span>
         </div>
       </div>
   )
