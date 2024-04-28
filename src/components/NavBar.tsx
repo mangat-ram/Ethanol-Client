@@ -20,6 +20,13 @@ const NavBar = () => {
           {/*Todo Add Mobile navbar*/}
           <div className="hidden items-center space-x-4 sm:flex">
             <>
+              <Link href="#features" 
+              className={buttonVariants({
+                variant:"ghost",
+                size:"xl"
+              })}>
+                Features
+              </Link>
               <Link href="/pricing" 
               className={buttonVariants({
                 variant:"ghost",

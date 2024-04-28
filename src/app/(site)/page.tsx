@@ -12,13 +12,14 @@ import clsx from "clsx";
 import Image from "next/image";
 import Check from "../../../public/check.svg"
 import Diamond from "../../../public/diamond.svg" 
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
     <div>
-      <HeroSection />
+      <div id="hg"><HeroSection /></div>
       <div id="intro"><IntroCard /></div>
-      <div id="middle"><MiddleSection /></div>
+      <div id="features"><MiddleSection /></div>
       <div id="testimonials">
         <h1 className="text-5xl p-12 flex justify-center font-bold font-featureDeck">Testimonials from Experts</h1>
         <MaxWidthWrapper className="flex justify-center flex-wrap gap-12 font-featureDeck">
@@ -67,7 +68,7 @@ export default function Home() {
                       className='whitespace-nowrap w-full mt-4 border-[3px] border-amber-300 text-lg'>
                       {card.planType === PRICING_PLANS.proplan ? 'Go Pro' : 'Get Started'}
                     </Button>
-                  </CardContent>
+                </CardContent>
               }
               cardFooter={
                   <ul className='font-cabinet flex mb-2 flex-col gap-4'>
@@ -89,6 +90,7 @@ export default function Home() {
           ))}
         </MaxWidthWrapper>
       </div>
+      <Footer />
     </div>
   );
 }
