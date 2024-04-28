@@ -108,19 +108,19 @@ export const TestimonialsArr:Array<TestimonialsArrType> = [
 export const pricingCardsArr = [
   {
     planType: 'Free Plan',
-    price: '0$',
+    price: '0',
     description: 'Limited block trials  for teams',
-    highlightFeature: '',
+    highlightFeature: 'Best to start',
     freatures: [
       '10 projects per users',
-      'limited access to progress area',
+      'limited access to ethanol progress area ',
       '30 day page history',
       'Invite 2 guests',
     ],
   },
   {
     planType: 'Pro Plan',
-    price: '12.99$',
+    price: '12.99',
     description: 'Billed annually. $17 billed monthly',
     highlightFeature: 'Everything in free +',
     freatures: [
@@ -131,13 +131,13 @@ export const pricingCardsArr = [
     ],
   },
   {
-    planType: 'Pro Plan',
-    price: '24.99$',
+    planType: 'Firm Plan',
+    price: '24.99',
     description: 'Billed annually. $30 billed monthly',
     highlightFeature: 'Everything in free +',
     freatures: [
       'Unlimited projects for teams',
-      'Free Access to APIs',
+      'Free Access to all ethanol APIs on the go',
       '2 years day page history',
       'Invite unlimited guests',
     ],

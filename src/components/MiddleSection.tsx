@@ -8,6 +8,7 @@ const MiddleSection = () => {
   const FeatureComps = FeatureArr.map((item) => {
     return (
       <FeatureDiv 
+        key={item.heading}
         className={item.class} 
         heading={item.heading}
         content={item.content} 
