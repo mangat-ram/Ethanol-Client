@@ -103,3 +103,45 @@ export const TestimonialsArr:Array<TestimonialsArrType> = [
     bg: "bg-[#eefc57]/40"
   }
 ]
+
+
+export const pricingCardsArr = [
+  {
+    planType: 'Free Plan',
+    price: '0$',
+    description: 'Limited block trials  for teams',
+    highlightFeature: '',
+    freatures: [
+      '10 projects per users',
+      'limited access to progress area',
+      '30 day page history',
+      'Invite 2 guests',
+    ],
+  },
+  {
+    planType: 'Pro Plan',
+    price: '12.99$',
+    description: 'Billed annually. $17 billed monthly',
+    highlightFeature: 'Everything in free +',
+    freatures: [
+      'Unlimited projects for users',
+      'Unlimited customizations uploads',
+      '1 year day page history',
+      'Invite 10 guests',
+    ],
+  },
+  {
+    planType: 'Pro Plan',
+    price: '24.99$',
+    description: 'Billed annually. $30 billed monthly',
+    highlightFeature: 'Everything in free +',
+    freatures: [
+      'Unlimited projects for teams',
+      'Free Access to APIs',
+      '2 years day page history',
+      'Invite unlimited guests',
+    ],
+  },
+];
+
+export const PRICING_PLANS = { proplan: 'Pro Plan', freeplan: 'Free Plan' ,entPlan:'Firm Plan'};
