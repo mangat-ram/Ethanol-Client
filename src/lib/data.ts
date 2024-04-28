@@ -49,49 +49,57 @@ type TestimonialsArrType = {
   role: string;
   companyName: string;
   review:string;
+  bg:string;
 }
+import image from "./pro1.jpg"
 
 export const TestimonialsArr:Array<TestimonialsArrType> = [
   {
-    avatar:"image1",
+    avatar:image,
     name:"Fraser McGurk",
     role:"CEO",
     companyName:"ZooPe Inc.",
-    review:"Ethanol is very helpful tool for our team it has given us more clarity about how we will start our project how to proceed and how everyone is going to do their part and track progress of every department and tasks assigned to each person."
+    review:"Ethanol is very helpful tool for our team it has given us more clarity about how we will start our project how to proceed and how everyone is going to do their part and track progress of every department and tasks assigned to each person.",
+    bg: "bg-[#a2d6f9]/40"
   },
   {
-    avatar:"image2",
+    avatar:image,
     name:"David Lynch",
     role:"Engineering Manager",
     companyName:"Watters LLC.",
-    review:"Ethanol has truly revolutionized our project management approach. It's provided us with a clear roadmap, ensuring everyone understands their roles and responsibilities. Tracking progress has never been easier, thanks to its intuitive features."
+    review:"Ethanol has truly revolutionized our project management approach. It's provided us with a clear roadmap, ensuring everyone understands their roles and responsibilities. Tracking progress has never been easier, thanks to its intuitive features.",
+    bg: "bg-[#ff65b3]/40"
   },
   {
-    avatar:"image3",
+    avatar:image,
     name:"Timothy Chalamet",
     role:"CTO",
     companyName:"Pfayzer Group.",
-    review:"Using Ethanol has been a game-changer for our team. It's streamlined our project planning process, allowing us to allocate tasks efficiently and monitor their progress seamlessly. It's become an indispensable tool in our toolkit."
+    review:"Using Ethanol has been a game-changer for our team. It's streamlined our project planning process, allowing us to allocate tasks efficiently and monitor their progress seamlessly. It's become an indispensable tool in our toolkit.",
+    bg: "bg-[#cfe57d]/40"
   },
   {
-    avatar:"image4",
+    avatar:image,
     name:"Mangat Leelaram",
     role:"Founder and CXO",
     companyName:"BenzeneLabs & Co.",
-    review:"Ethanol has exceeded our expectations in project management. It's empowered our team to collaborate effectively, clarifying roles and responsibilities from the get-go. With its robust tracking capabilities, we're able to stay on top of tasks and milestones effortlessly."
+    review:"Ethanol has exceeded our expectations in project management. It's empowered our team to collaborate effectively, clarifying roles and responsibilities from the get-go. With its robust tracking capabilities, we're able to stay on top of tasks and milestones effortlessly.",
+    bg: "bg-[#02cecb]/40"
   },
   {
-    avatar:"image5",
+    avatar:image,
     name:"Ashton Smurf",
     role:"Founder",
     companyName:"PayRent.com",
-    review:"We can't imagine managing our project without Ethanol now. It's been instrumental in providing us with a structured approach, ensuring everyone is aligned with the project objectives. The ability to track progress in real-time has significantly boosted our productivity."
+    review:"We can't imagine managing our project without Ethanol now. It's been instrumental in providing us with a structured approach, ensuring everyone is aligned with the project objectives. The ability to track progress in real-time has significantly boosted our productivity.",
+    bg: "bg-[#4aa77c]/40"
   },
   {
-    avatar:"image1",
+    avatar:image,
     name:"Geoff Siefert",
     role:"Tech Lead",
     companyName:"Croff Solutions",
-    review:"Ethanol has simplified our project coordination immensely. With its user-friendly interface and comprehensive features, we've gained a newfound level of clarity in our workflows. It's become an essential companion for keeping our team organized and on track."
+    review:"Ethanol has simplified our project coordination immensely. With its user-friendly interface and comprehensive features, we've gained a newfound level of clarity in our workflows. It's become an essential companion for keeping our team organized and on track.",
+    bg: "bg-[#eefc57]/40"
   }
 ]

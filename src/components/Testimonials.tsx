@@ -5,11 +5,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-} from "@/components/ui/avatar"
 import { cn } from "@/lib/utils"
 import Image from "next/image"
 
@@ -24,11 +19,10 @@ interface TestimonialsProps{
 
 const Testimonials = ({avatar,name,role,companyName,review,className}:TestimonialsProps) => {
   return (
-    // <div className={cn("mx-auto w-full max-w-screen-xl px-2.5 md:px-20 p-6 flex flex-col items-center justify-center text-center rounded-3xl mt-8 font-featureDeck",className)}>
-      <Card className={cn("w-[33%] h-60 flex font-featureDeck text-center items-center bg-yellow-600",className)}>
-        <CardHeader className="flex items-center">
-          <div className="w-24 h-24 relative">
-            <Image className="absolute rounded-full inset-0 w-full h-full object-cover" src={avatar} alt="cn" quality={100} width={1987} height={3000}/>
+      <Card className={cn("flex w-[30%]", className)}>
+        <CardHeader className="flex items-center text-center">
+          <div className="relative w-16 h-16">
+            <Image className="absolute rounded-full inset-0 w-full h-full object-cover" src={avatar} alt="cn" quality={100} width={64} height={64} />
           </div>
           <div>
             <CardTitle>{name}</CardTitle>
@@ -36,11 +30,10 @@ const Testimonials = ({avatar,name,role,companyName,review,className}:Testimonia
             <CardTitle className="text-sm font-bold">{companyName}</CardTitle>
           </div>
         </CardHeader>
-        <CardContent>
+        <CardContent className="flex-grow">
           <p className="text-[1.04rem] text-left pt-6">{review}</p>
         </CardContent>
       </Card>
-    // </div>
   )
 }
 

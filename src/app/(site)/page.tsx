@@ -1,8 +1,9 @@
 import HeroSection from "@/components/HeroSection";
 import IntroCard from "@/components/IntroCard";
+import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import MiddleSection from "@/components/MiddleSection";
 import Testimonials from "@/components/Testimonials";
-import image from "../../../public/pro1.jpg"
+import { TestimonialsArr } from "@/lib/data";
 
 export default function Home() {
   return (
@@ -10,7 +11,14 @@ export default function Home() {
       <HeroSection />
       <IntroCard />
       <MiddleSection />
-      <Testimonials avatar={image} name="Fraser McGurk" role="CEO" companyName="ZooPe Inc." review="Ethanol is very helpful tool for our team it has given us more clarity about how we will start our project how to proceed and how everyone is going to do their part and track progress of every department and tasks assigned to each person." />
+      <h1 className="text-5xl p-12 flex justify-center font-bold font-featureDeck">Testimonials from Experts</h1>
+      <MaxWidthWrapper className="flex justify-center flex-wrap gap-12 font-featureDeck">
+        {TestimonialsArr.map((i) => {
+          return (
+            <Testimonials key={i.companyName} avatar={i.avatar} name={i.name} companyName={i.companyName} className={i.bg} role={i.role} review={i.review} />
+          )
+        })}
+      </MaxWidthWrapper>
     </div>
   );
 }
