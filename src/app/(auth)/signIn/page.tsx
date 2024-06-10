@@ -38,7 +38,6 @@ const SignIn = () => {
   const submitLogin = async (data: z.infer<typeof signInSchema>) => {
     // const result = await 
     console.log("success");
-    
   }
 
   return (
