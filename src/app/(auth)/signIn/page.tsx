@@ -20,24 +20,44 @@ import { Input } from "@/components/ui/input"
 import { Loader2 } from 'lucide-react';
 import { signInSchema } from "@/schemas/signInSchema"
 import Link from "next/link";
+import axios from "axios";
 
 const SignIn = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false)
   const router = useRouter();
   const { toast } = useToast();
-
+  
   const form = useForm<z.infer<typeof signInSchema>>({
     resolver: zodResolver(signInSchema),
     defaultValues: {
-      username:"",
-      password: ""
+      userName:"",
+      passWord: ""
     }
   })
 
   const submitLogin = async (data: z.infer<typeof signInSchema>) => {
-    // const result = await 
-    console.log("success");
+    setIsSubmitting(true);
+    try {
+      const res = await axios.post('http://localhost:8000/api/v1/users/login', data);
+      let userName = data.userName;
+      console.log(userName);
+      console.log("success");
+      toast({
+        title: "Success",
+        description: res.data.message
+      });
+      router.push(`/dashboard/${userName}`);
+    } catch (error) {
+      console.error(error);
+      toast({
+        title: "Login Failed",
+        description: "Error in Logging In User!",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -55,7 +75,7 @@ const SignIn = () => {
             <form onSubmit={form.handleSubmit(submitLogin)} className="space-y-6">
               <FormField
                 control={form.control}
-                name="username"
+                name="userName"
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>Username</FormLabel>
@@ -71,7 +91,7 @@ const SignIn = () => {
               />
               <FormField
                 control={form.control}
-                name="password"
+                name="passWord"
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>Password</FormLabel>
