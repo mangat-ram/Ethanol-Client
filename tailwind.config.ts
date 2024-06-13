@@ -21,6 +21,7 @@ const config = {
       fontFamily: {
         'featureDeck': ['featureDeck'],
         'cabinet': ['cabinet'],
+        'poppins': ['poppins']
       },
       colors: {
         border: "hsl(var(--border))",

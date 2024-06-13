@@ -88,3 +88,8 @@
   font-family: cabinet;
   src: url("../../public/fonts/CabinetGrotesk-Variable.ttf");
 }
+
+@font-face {
+  font-family: poppins;
+  src: url("../../public/fonts/Poppins-Regular.ttf");
+}

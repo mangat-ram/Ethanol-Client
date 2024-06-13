@@ -6,7 +6,7 @@ const useUser = () => {
   const user = async () => {
     try {
       const res = await axios.get(`${process.env.HOST_NAME}/users/getUser`)
-      return res;
+      return res.data;
     } catch (error) {
       console.log("Errror::: ",error);
     }

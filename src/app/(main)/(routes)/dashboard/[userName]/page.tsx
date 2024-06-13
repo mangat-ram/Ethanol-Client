@@ -1,17 +1,31 @@
-import MaxWidthWrapper from "@/components/MaxWidthWrapper"
-import SideBar from "@/components/SideBar"
-import React from "react"
-import Navigation from "../../../_components/navigation"
-import { useParams, usePathname } from "next/navigation"
+"use client";
+import React, { useState } from "react"
 
-const MainPage = () => {
+interface ProjectsIdPageProps{
+  params: {
+    userName: string
+  }
+}
 
-  const params = useParams();
-  const pathname = usePathname();
+const ProjectsIdPage = ({params}: ProjectsIdPageProps) => {
+
+  const [labs, setLabs] = useState([]);
+  const [updateLab,setUpdateLab] = useState({}); 
+
+  const updateLabDetails = () => {
+    console.log("updateLabDetails");
+  }
+
+  // Skeleton Pending
+  // Null Document Check
 
   return (
-    <Navigation />
+    <div className="pb-40">
+      <div>
+        <Toolbar initialData={} />
+      </div>
+    </div>
   )
 }
 
-export default MainPage
+export default ProjectsIdPage;
